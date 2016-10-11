@@ -1,0 +1,7 @@
+name: Rahul Kant
+markdown: redcarpet
+exclude: ["node_modules",
+  "gulpfile.js",
+  "package.json",
+  "preview.jpg",
+  "README.md"]

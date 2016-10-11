@@ -1,0 +1,20 @@
+mixin nav-content()
+    li: a(href="#design") Skills
+    li: a(href="#mentoring") Training
+    li: a(href="#articles") Works
+    li: a(href="#contact") Contact
+
+.mobile-nav
+  +nav-content()
+
+header
+  .header-position
+    a(href="#about")
+      h1.logo Rahul Kant
+    
+    nav.site-nav
+      +nav-content()
+    
+    a(href="mailto:rahulkantcs@gmail.com").email-link +email me
+    
+    .mobile-nav-toggle: span

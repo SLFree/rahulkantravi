@@ -17,18 +17,24 @@ function mobileNav() {
 }
 
 
-function smoothScroll (duration) {
-	$('a[href^="#"]').on('click', function(event) {
+function smoothScroll(duration) {
+  $('a[href^="#"]').on('click', function (event) {
 
-	    var target = $( $(this).attr('href') );
+    var target = $($(this).attr('href'));
+    var newTop = target.offset().top
+    if ($(".mobile-nav-toggle").css('display')!='none') {
+      $('.mobile-nav-toggle, .mobile-nav').removeClass('is-open');
+      newTop = newTop - 90;
 
-	    if( target.length ) {
-	        event.preventDefault();
-	        $('html, body').animate({
-	            scrollTop: target.offset().top
-	        }, duration);
-	    }
-	});
+    }
+    console.error(newTop);
+    if (target.length) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: newTop
+      }, duration);
+    } 
+  });
 }
 
 function designBGStuff() {
@@ -52,7 +58,7 @@ function mentoringBubbleClick() {
   $('.face').on('click',function() {
     var $this = $(this),
         faceTop = $this.position().top,
-        vertMath =  -1 * (faceTop - 230),
+        vertMath =  -1 * (faceTop - 300),
         faceLeft = $this.position().left,
         horizMath =  0 - faceLeft;
 
@@ -121,7 +127,7 @@ function startMentoring() {
 
 function mentoringNarrowStart() {
   $('.faces').css({
-    'top': '230px',
+    'top': '300px',
     'left': '0px'
   });
   $('.face').first().addClass('has-bubble-open')

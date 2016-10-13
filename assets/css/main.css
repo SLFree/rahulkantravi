@@ -837,8 +837,10 @@ nav.tn-nav-wrap {
 
 @media (max-width: 775px) {
   .home-wrap header {
-    width: auto;
-    padding: 20px 0; }
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+    z-index: 9; }
     .home-wrap header .header-position {
       width: auto;
       position: relative;
@@ -865,8 +867,10 @@ nav.tn-nav-wrap {
       display: -ms-flexbox;
       display: flex; }
   .home-wrap .mobile-nav.is-open {
-    padding-top: 65px;
+    padding-top: 87px;
     display: block;
+    position: fixed;
+    z-index: 9;
     -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
             transform: translateY(0%); } }
@@ -1051,7 +1055,7 @@ section.articles {
     padding: 0; }
     @media (max-width: 640px) {
       .home-sections section.articles {
-        padding-bottom: 50px; } }
+        padding-bottom: 0px; } }
   section.articles .col-1 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1421,7 +1425,9 @@ section.podcast {
     padding: 130px 0; }
     @media (max-width: 635px) {
       .home-sections section {
-        padding: 0px; } }
+        padding: 0px; }
+        .home-sections section#about {
+          padding-top: 105px; } }
   .home-sections .flex {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1459,8 +1465,7 @@ section.podcast {
   width: 100%; }
 
 .col-50 {
-  width: 50%;
-  margin-left: 40px; }
+  width: 50%; }
 
 .col-100 {
   width: 100%; }

@@ -58,7 +58,7 @@ function mentoringBubbleClick() {
   $('.face').on('click',function() {
     var $this = $(this),
         faceTop = $this.position().top,
-        vertMath =  -1 * (faceTop - 300),
+        vertMath =  -1 * (faceTop - 150),
         faceLeft = $this.position().left,
         horizMath =  0 - faceLeft;
 

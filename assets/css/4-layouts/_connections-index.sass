@@ -1,0 +1,97 @@
+html,body
+  background: #EEE
+  
+
+
+.connections-index-wrap
+  max-width: 970px
+  margin: auto
+  padding: 0px 30px
+  @media (max-width: 620px)
+    padding: 0
+  
+  h2
+    text-align: center
+  
+  .header
+    +clearfix
+
+  
+  #connections
+    background: #fff
+    +clearfix
+    .connection
+      padding: 15px
+      position: relative
+      &:hover
+        .cimg
+          transform: scale(1.1)
+      &::after
+        clear: both
+        content: ""
+        display: block
+        max-width: 200px
+        height: 1px
+        margin: 0 auto
+        background: #aaf
+        @media (max-width: 620px)
+          max-width: 100px
+      
+    ul
+      padding: 0;
+
+    .name
+      font-size: 18px
+      position: absolute
+      bottom: 10px
+      right: 15px
+
+    .comment
+      color: #999
+      font-size: 20px
+      text-align: left
+      @media (max-width: 620px)
+        font-size: 14px
+      
+    .cimg
+      width: 100px
+      height: 150px
+      float: left
+      margin-right: 15px
+      border-radius: 5px
+      border: 3px solid #aaf
+      transition: all .2s ease-in-out
+
+  @media (max-width: 620px)
+    h2
+      margin-top: 40px
+      font-size: 25px
+      text-align: right
+      margin-right: 10px
+    
+    
+      
+.connections-index-back-to-home-link
+  font-family: 'icomoon'
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+
+  position: absolute
+  top: 40px
+  left: 30px
+  font-size: 30px
+
+  &:before
+    content: "\e002"
+
+  span
+    text-transform: uppercase
+    font-size: 16px
+    margin-left: 10px
+    display: inline-block
+    vertical-align: middle

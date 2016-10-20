@@ -78,7 +78,7 @@ var contact_list=[
   },
   {
     name: 'G.Vijaya Ramya',
-    img: 'ramya.jpg',
+    img: 'ramya.JPG',
     comment: 'I really enjoyed the workshop. Rahul made learning very interesting. I now feel very confident in on the topics and I thank Rahul for making me feel at ease.',
     linkedin: 'https://in.linkedin.com/in/vijayaramya-gutta-001a4785'
     

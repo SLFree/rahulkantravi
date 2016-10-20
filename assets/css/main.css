@@ -1522,20 +1522,51 @@ html, body {
     clear: both;
     content: "";
     display: table; }
-  .connections-index-wrap #connections {
-    background: #fff; }
-    .connections-index-wrap #connections::after {
+  .connections-index-wrap .connections {
+    background-image: url(../img/mentoring-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; }
+    .connections-index-wrap .connections::after {
       clear: both;
       content: "";
       display: table; }
-    .connections-index-wrap #connections .connection {
+    .connections-index-wrap .connections .searchBox {
+      position: absolute;
+      bottom: 19%;
+      right: 12px; }
+      .connections-index-wrap .connections .searchBox .search-logo {
+        width: 20px;
+        position: absolute;
+        right: 4px;
+        top: 4px; }
+      .connections-index-wrap .connections .searchBox .searchLink {
+        font-size: 20px;
+        max-width: 200px;
+        border: none;
+        background: rgba(250, 250, 250, 0.6);
+        color: rgba(250, 50, 50, 0.7);
+        padding: 4px;
+        border-bottom: 3px solid rgba(250, 50, 50, 0.7); }
+        .connections-index-wrap .connections .searchBox .searchLink:focus {
+          outline-offset: 0px;
+          outline: none; }
+    .connections-index-wrap .connections .logo {
+      width: 30px;
+      height: 30px;
+      padding: 12px;
+      margin-left: 8px;
+      margin-top: 8px;
+      background: rgba(250, 250, 250, 0.6); }
+    .connections-index-wrap .connections .connection {
       padding: 15px;
-      position: relative; }
-      .connections-index-wrap #connections .connection:hover .cimg {
+      position: relative;
+      background: rgba(250, 250, 250, 0.6); }
+      .connections-index-wrap .connections .connection:hover .cimg {
         -webkit-transform: scale(1.1);
             -ms-transform: scale(1.1);
                 transform: scale(1.1); }
-      .connections-index-wrap #connections .connection::after {
+      .connections-index-wrap .connections .connection::after {
         clear: both;
         content: "";
         display: block;
@@ -1544,23 +1575,44 @@ html, body {
         margin: 0 auto;
         background: #aaf; }
         @media (max-width: 620px) {
-          .connections-index-wrap #connections .connection::after {
+          .connections-index-wrap .connections .connection::after {
             max-width: 100px; } }
-    .connections-index-wrap #connections ul {
+    .connections-index-wrap .connections ul {
       padding: 0; }
-    .connections-index-wrap #connections .name {
+    .connections-index-wrap .connections .name {
       font-size: 18px;
       position: absolute;
       bottom: 10px;
       right: 15px; }
-    .connections-index-wrap #connections .comment {
-      color: #999;
+    .connections-index-wrap .connections .comment {
+      color: darkolivegreen;
       font-size: 20px;
-      text-align: left; }
+      text-align: left;
+      text-indent: 1.5em; }
+      .connections-index-wrap .connections .comment span.start {
+        position: absolute;
+        top: -10px;
+        left: 115px;
+        color: rgba(250, 50, 50, 0.7);
+        font-size: 60px; }
+        @media (max-width: 620px) {
+          .connections-index-wrap .connections .comment span.start {
+            top: 5px;
+            font-size: 30px; } }
+      .connections-index-wrap .connections .comment span.end {
+        color: rgba(250, 50, 50, 0.7);
+        font-size: 60px;
+        line-height: 0;
+        position: relative;
+        bottom: -20px; }
+        @media (max-width: 620px) {
+          .connections-index-wrap .connections .comment span.end {
+            font-size: 30px;
+            bottom: 0px; } }
       @media (max-width: 620px) {
-        .connections-index-wrap #connections .comment {
+        .connections-index-wrap .connections .comment {
           font-size: 14px; } }
-    .connections-index-wrap #connections .cimg {
+    .connections-index-wrap .connections .cimg {
       width: 100px;
       height: 150px;
       float: left;

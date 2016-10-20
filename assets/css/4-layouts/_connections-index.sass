@@ -17,15 +17,49 @@ html,body
     +clearfix
 
   
-  #connections
-    background: #fff
+  .connections
+    background:
+      image: url(../img/mentoring-bg.jpg)
+      size: cover
+      position: center
+    position: relative
     +clearfix
+    .searchBox
+      position: absolute
+      bottom: 19%
+      right: 12px
+      .search-logo
+        width: 20px
+        position: absolute
+        right: 4px
+        top: 4px
+      .searchLink
+        font-size: 20px
+        max-width: 200px
+        border: none
+        background: rgba(250,250,250,0.6)
+        color: rgba(250,50,50,0.7)
+        padding: 4px
+        border-bottom: 3px solid rgba(250,50,50,0.7)
+        &:focus
+          outline-offset: 0px
+          outline: none
+    .logo
+      width: 30px
+      height: 30px
+      padding: 12px
+      margin-left: 8px
+      margin-top: 8px
+      background: rgba(250,250,250,0.6)
     .connection
       padding: 15px
       position: relative
+      background: rgba(250,250,250,0.6)
+      
       &:hover
         .cimg
           transform: scale(1.1)
+
       &::after
         clear: both
         content: ""
@@ -47,9 +81,33 @@ html,body
       right: 15px
 
     .comment
-      color: #999
+      color: darkolivegreen
       font-size: 20px
       text-align: left
+      text-indent: 1.5em
+      span.start
+        position: absolute
+        top: -10px
+        left: 115px
+        color: rgba(250,50,50,0.7)
+        font-size: 60px
+        @media (max-width: 620px)
+          top: 5px
+          font-size: 30px
+    
+        
+      span.end
+        color: rgba(250, 50, 50, 0.7)
+        font-size: 60px
+        line-height: 0
+        position: relative
+        bottom: -20px
+        @media (max-width: 620px)
+          font-size: 30px
+          bottom: 0px
+          
+        
+        
       @media (max-width: 620px)
         font-size: 14px
       

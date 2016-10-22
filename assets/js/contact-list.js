@@ -14,6 +14,13 @@ var contact_list=[
     
   },
   {
+    name: 'Rishabh Nigam',
+    img: 'rishabh.jpg',
+    comment: 'Jhakaash workshop, gazab ka knowledge sairing. Helped me to polish me skills and in becomeing good developer. And a good adviser.',
+    linkedin: 'https://in.linkedin.com/in/rishabh-nigam-a0083575'
+    
+  },
+  {
     name: 'Avishek Das',
     img: 'AvishekDas.jpg',
     comment: 'The workshop provided was up to the expectation and easy to understand. Learning from Rahul was fun.',
@@ -28,17 +35,17 @@ var contact_list=[
     
   },
   {
-    name: 'Saikalpana Chirumamilla',
-    img: 'kalpana.jpg',
-    comment: 'Rahul is helping us to understand the deepth of tech by making unique but relevant and logical example and and the highlights are the stories.',
-    linkedin: 'https://in.linkedin.com/in/saikalpana-chirumamilla-54174193'
-    
-  },
-  {
     name: 'Aniket Lahiri',
     img: 'Aniket.jpg',
     comment: 'Earlier I heard about Android workshop as one of hardest courses for a fresher. But I was always been inside my comfort zone throughout the course. Rahul, you made it and all the credits goes to you. A big Thank you after all.',
     linkedin: 'https://in.linkedin.com/in/aniket-lahiri-9a248884'
+    
+  },
+  {
+    name: 'Saikalpana Chirumamilla',
+    img: 'kalpana.jpg',
+    comment: 'Rahul is helping us to understand the deepth of tech by making unique but relevant and logical example and and the highlights are the stories.',
+    linkedin: 'https://in.linkedin.com/in/saikalpana-chirumamilla-54174193'
     
   },
   {

@@ -1,0 +1,21 @@
+---
+layout: connections
+title: Projects | Rahul Kant Ravi
+---
+ <div class="project">
+  <a class="article-index-back-to-home-link" href="/"><span>home</span></a>
+
+  <div class="article-index-wrap">
+    <h2>Projects Index</h2>
+    {% for post in site.categories.project %}
+    <article>
+      <a href="#" >
+        <div class="article-meta">
+          <div class="name"> {{post.title}}</div>
+          <div class="date"> {{post.date | date: "%b %d, %Y"}}</div>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</div>

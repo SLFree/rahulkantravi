@@ -1207,7 +1207,7 @@ section.design {
     text-align: center;
     font-size: 30px; }
   section.design .dribbble {
-    background-color: #ea4c89;
+    background-color: rgba(101, 208, 61, 0.69);
     background-image: url(../img/design-bg.png);
     background-position: center;
     padding: 50px 0;
@@ -1650,3 +1650,74 @@ html, body {
     margin-left: 10px;
     display: inline-block;
     vertical-align: middle; }
+
+.project .article-index-wrap {
+  max-width: 400px;
+  margin: auto;
+  padding: 0 30px; }
+  @media (max-width: 700px) {
+    .project .article-index-wrap {
+      margin-top: 80px; } }
+  .project .article-index-wrap article .date {
+    color: #999;
+    line-height: 3; }
+  .project .article-index-wrap article .name {
+    font-size: 18px;
+    line-height: 2; }
+
+.project .article-index-back-to-home-link {
+  font-family: icomoon;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  font-size: 30px; }
+  .project .article-index-back-to-home-link span {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle; }
+  .project .article-index-back-to-home-link:before {
+    content: "\e002"; }
+
+.blog {
+  max-width: 950px;
+  margin: 20px auto;
+  padding: 1px 20px;
+  text-align: justify;
+  background-color: rgba(33, 150, 243, 0.2);
+  background-image: url(../img/blog/bg.png);
+  background-position: center;
+  font-size: 20px;
+  line-height: 1.5;
+  -webkit-border-radius: 5px;
+          border-radius: 5px; }
+  .blog i {
+    font-weight: bold; }
+  .blog a {
+    color: blue; }
+  @media (max-width: 620px) {
+    .blog {
+      margin: 0;
+      text-align: left;
+      font-size: 15px; } }
+
+.harmony {
+  width: 100px;
+  float: left; }
+
+.harDiv {
+  margin-bottom: 10px; }
+  .harDiv::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .harDiv p {
+    margin-left: 150px; }

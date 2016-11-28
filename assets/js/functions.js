@@ -27,7 +27,7 @@ function smoothScroll(duration) {
       newTop = newTop - 90;
 
     }
-    console.error(newTop);
+    //console.error(newTop);
     if (target.length) {
       event.preventDefault();
       $('html, body').animate({
@@ -61,7 +61,8 @@ function mentoringBubbleClick() {
         vertMath =  -1 * (faceTop - 150),
         faceLeft = $this.position().left,
         horizMath =  0 - faceLeft;
-
+  console.log(faceTop+' faceTop '+ vertMath+" vertMath "+faceLeft+" faceLeft "+horizMath+" horizMath ");
+debugger;
     if($(window).width() > 640){
       $this.parent().css('top', + vertMath +'px');
     } else {
@@ -71,11 +72,13 @@ function mentoringBubbleClick() {
         $this.parent().css('left', + horizMath +'px');
       }
     }
+    debugger;
     if(!$this.hasClass('back-btn')){
       $this.addClass('has-bubble-open')
         .siblings().removeClass('has-bubble-open');
     }
   });
+  debugger;
 
 }
 

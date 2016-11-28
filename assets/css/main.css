@@ -880,6 +880,11 @@ section.about {
   background-size: cover;
   background-position: center bottom;
   color: #3f3f42; }
+  @media (max-width: 640px) {
+    section.about {
+      background-image: url(../img/about-sm.jpg);
+      background-size: cover;
+      background-position: center left; } }
   section.about h2 {
     color: #3f3f42;
     margin-left: -150px;
@@ -890,9 +895,10 @@ section.about {
     line-height: 1; }
     @media (max-width: 640px) {
       section.about h2 {
-        margin-left: auto;
+        margin-left: 0px;
         margin-right: auto;
-        max-width: 300px; } }
+        max-width: 300px;
+        color: #fff; } }
   section.about .lead {
     padding-bottom: 180px; }
     @media (max-width: 640px) {
@@ -900,6 +906,10 @@ section.about {
         margin-left: auto;
         margin-right: auto;
         max-width: 300px; } }
+
+@media (max-width: 640px) {
+  .smallhead {
+    color: #fff; } }
 
 section.youtube {
   background-image: url(../img/youtube-bg.gif);

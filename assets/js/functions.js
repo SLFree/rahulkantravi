@@ -15,7 +15,7 @@ function submit() {
     if($('#mce-MSG').val().trim()!=''&& $('#mce-NAME').val().trim()!='' && $('#mce-EMAIL').val().trim()!=''){
        // don't submit multiple times
       this.submit(); // use the native submit method of the form element
-       setTimeout(function(){ window.top.close(); }, 500);
+       setTimeout(function(){ window.close(); }, 500);
     }else{
       $('#mce-error-response').text(' Please Fill All The Fields ');
       $('#mce-error-response').show(500);

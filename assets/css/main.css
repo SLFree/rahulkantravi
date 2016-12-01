@@ -1251,10 +1251,14 @@ section.design {
     margin-bottom: 20px; }
 
 section.notes {
+  padding: 20px 0 !important;
   background-image: url(../img/notes-bg.jpg);
   background-size: cover;
   background-position: center;
   color: white; }
+  @media (max-width: 640px) {
+    section.notes {
+      padding: 1px !important; } }
   section.notes .home-lead {
     text-align: center; }
   section.notes .col-1 {
@@ -1335,11 +1339,32 @@ section.notes {
       font-size: 12px;
       left: 10px; }
 
+#mce-MSG {
+  width: 100%;
+  margin-top: 19px;
+  border: none;
+  height: 120px;
+  color: #fff;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0); }
+  #mce-MSG:focus {
+    outline: none; }
+
 section.podcast {
   background-image: url(../img/podcast-bg.jpg);
   background-size: cover;
   background-position: center;
   color: white; }
+  @media (max-width: 640px) {
+    section.podcast {
+      padding: 10px !important; }
+      section.podcast .home-sections .flex {
+        display: block; }
+      section.podcast .col-1 {
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+        height: auto; } }
   section.podcast .home-lead {
     text-align: center; }
   section.podcast .podcast-content {

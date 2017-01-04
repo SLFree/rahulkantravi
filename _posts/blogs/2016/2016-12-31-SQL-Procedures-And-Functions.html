@@ -12,18 +12,18 @@ category: blog
 
 <article>
     <p>
-        Resently I came across a new part of sql called procedures and function, by the name itself we can say that it is set of sql statements set togather to get proper output much like functions or procdures in other languages. But the importent question is why they are better?
+        Recently I came across a new part of SQL called procedures and function, by the name itself we can say that it is set of SQL statements set together to get proper output much like functions or procedures in other languages. But the important question is why they are better?
     </p>
 </article>
 <article>
     <p>
         <h4>Advantages of SQL Procedures Or Functions
         </h4>
-		There are alot of advantages of sql Procedures, I am listing just a fue.
-		1. Procedures Or Functions are PRE-COMPILED EXICUTION of sql statements that resides on SQL server, so the exeicution of the sql statements is much faster.<br/>
-		2. Since the sql statements and logic resides on server it REDUCES CLIENT/SERVER TRAFFIC.<br/>
-		3. It is a very good way of EFFICENT REUSE OF CODE AND PROGRAMMING ABSTRACTION as the no part of sql statements will be on sever side, every thing is on database level.<br/>
-		4. ENHANCED SECURITY CONTROLS: We can actually write special security test for table which will be abstracted completly.
+		There are a lot of advantages of SQL Procedures, I am listing just a few.
+		1. Procedures Or Functions are PRE-COMPILED EXICUTION of SQL statements that resides on SQL server, so the execution of the SQL statements is much faster.<br/>
+		2. Since the SQL statements and logic resides on server it REDUCES CLIENT/SERVER TRAFFIC.<br/>
+		3. It is a very good way of EFFICENT REUSE OF CODE AND PROGRAMMING ABSTRACTION as the no part of SQL statements will be on sever side, every thing is on database level.<br/>
+		4. ENHANCED SECURITY CONTROLS: We can actually write special security test for table which will be abstracted completely.
     </p>
 </article>
 <article>
@@ -45,26 +45,26 @@ category: blog
         <h4> Procedures.
         </h4>
 		
-To create procedure in mysql, first change the delimiter, we can put any thing insted of $$.
-And it is equally important to convert it back. We do the so that there should not be any confuson for the sql server about what goes in the procdure and where it ends.
+To create procedure in mySQL, first change the delimiter, we can put any thing instead of $$.
+And it is equally important to convert it back. We do the so that there should not be any confuson for the SQL server about what goes in the procedure and where it ends.
 <pre><code>
 DELIMITER $$
 CREATE PROCEDURE name_of_procedure()
 BEGIN
 /*
-sql statements;
+SQL statements;
 */
 END $$
 DELIMITER ;
 </code></pre>
 <br/>
-<b>And to call a procdure</b>
+<b>And to call a procedure</b>
 <pre><code>
 CALL name_of_procedure(); 
 </code></pre>
 <br/>
 <b>Parameter To Procedure</b><br>
-There are three type of procdure that we can set for procdures.<br>
+There are three type of procedure that we can set for procedures.<br>
 1. IN<br>
 2. OUT<br>
 3. INOUT<br>
@@ -74,7 +74,7 @@ DELIMITER $$
 CREATE PROCEDURE name_of_procedure( IN in_name SMALLINT, OUT out_name VARCHAR(45))
 BEGIN
 /*
-sql statements;
+SQL statements;
 */
 SELECT col_name INTO out_name FROM table_name WHERE col_id=in_name;
 
@@ -94,7 +94,7 @@ CALL name_of_procedure(3, @var_name);
 SELECT @var_name;
 </code></pre>
 <br>
-Here the value of @var_new will be same as the output set in the procdure.
+Here the value of @var_new will be same as the output set in the procedure.
 
 <br><br>
  
@@ -109,7 +109,7 @@ DELIMITER $$
 CREATE PROCEDURE inOut_procedure(INOUT pas INT)
 BEGIN
 /*
-sql statements;
+SQL statements;
 */
 SELECT Phoneno INTO pas FROM table_name
 WHERE password=pas;
@@ -129,11 +129,11 @@ CALL inOut_procedure(@var_name);
 SELECT @var_name;
 </code></pre>	
 	<br>
-	<b>To Show all the procdure which has simillar name</b>
+	<b>To Show all the procedure which has simillar name</b>
 	<br><pre><code>
 SHOW  PROCEDURE STATUS LIKE '%name_of_procedure%';
 	</code></pre>	<br>
-	<b>To Show all the procdure in database</b>
+	<b>To Show all the procedure in database</b>
 <br><pre><code>
 SHOW  PROCEDURE STATUS;
 </code></pre>	
@@ -150,13 +150,13 @@ SHOW  PROCEDURE STATUS;
     <p>
         <h4> Functions
         </h4>
-		Functions are very simillar to the procdure but in function we cant send out parameter and the return statement should be written explicitly (parameters are optional).
+		Functions are very simillar to the procedure but in function we can't send out parameter and the return statement should be written explicitly (parameters are optional).
 		<pre><code>
 DELIMITER $$
 CREATE Function name_of_function(input_param_name INT) RETURN INT
 BEGIN
 /*
-sql statements;
+SQL statements;
 */
 RETURN some_int_value
 END $$

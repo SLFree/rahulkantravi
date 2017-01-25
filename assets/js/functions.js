@@ -1,6 +1,6 @@
-(function() {
+(function () {
     mentoringBubbleClick();
-    setInterval(function() {
+    setInterval(function () {
         articleTada()
     }, 4000);
 
@@ -9,25 +9,36 @@
     smoothScroll(300);
     mobileNav();
 })();
+function isValidEmailAddress(emailAddress) {
+    var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+    return pattern.test(emailAddress);
+};
 
 function submit() {
-    $('#mc-embedded-subscribe-form').submit(function(e) {
+    $('#mc-embedded-subscribe-form').submit(function (e) {
         e.preventDefault();
         if ($('#mce-MSG').val().trim() != '' && $('#mce-NAME').val().trim() != '' && $('#mce-EMAIL').val().trim() != '') {
             // don't submit multiple times
+
+            if (!isValidEmailAddress($('#mce-EMAIL').val().trim())) {
+                $('#mce-error-response').text('  Provide Proper Email ID ');
+                $('#mce-error-response').show(500);
+                setTimeout(function () { $('#mce-error-response').hide(500); }, 4000);
+                return;
+            }
             this.submit(); // use the native submit method of the form element
-            setTimeout(function() { window.close(); }, 500);
+            setTimeout(function () { window.close(); }, 500);
         } else {
             $('#mce-error-response').text(' Please Fill All The Fields ');
             $('#mce-error-response').show(500);
-            setTimeout(function() { $('#mce-error-response').hide(500); }, 4000);
+            setTimeout(function () { $('#mce-error-response').hide(500); }, 4000);
         }
     });
 }
 
 function mobileNav() {
 
-    $('.mobile-nav-toggle').on('click', function() {
+    $('.mobile-nav-toggle').on('click', function () {
         var status = $(this).hasClass('is-open');
         if (status) {
             $('.mobile-nav-toggle, .mobile-nav').removeClass('is-open');
@@ -40,7 +51,7 @@ function mobileNav() {
 
 
 function smoothScroll(duration) {
-    $('a[href^="#"]').on('click', function(event) {
+    $('a[href^="#"]').on('click', function (event) {
 
         var target = $($(this).attr('href'));
         var newTop = target.offset().top
@@ -60,9 +71,9 @@ function smoothScroll(duration) {
 }
 
 function designBGStuff() {
-    $('.design-img-link').hover(function() {
+    $('.design-img-link').hover(function () {
         $(this).parent().parent().css('background-color', $(this).data('color'));
-    }, function() {
+    }, function () {
         // off > revert the color
         $(this).parent().parent().css('background-color', $(this).parent().parent().data('orig-color'));
     });
@@ -77,7 +88,7 @@ function articleTada() {
 }
 
 function mentoringBubbleClick() {
-    $('.face').on('click', function() {
+    $('.face').on('click', function () {
         var $this = $(this),
             faceTop = $this.position().top,
             vertMath = -1 * (faceTop - 150),
@@ -103,7 +114,7 @@ function mentoringBubbleClick() {
 }
 
 
-$(window).scroll(function() {
+$(window).scroll(function () {
     youtubeVidScroll();
     //startMentoring();
     startArticles();
@@ -121,8 +132,8 @@ function startArticles() {
     var wScroll = $(window).scrollTop();
 
     if ($('section.articles').offset().top - $(window).height() / 1.2 < wScroll) {
-        $('.article-thumb').each(function(i) {
-            setTimeout(function() {
+        $('.article-thumb').each(function (i) {
+            setTimeout(function () {
                 $('.article-thumb').eq(i).addClass('is-visible');
             }, 100 * i);
         });
@@ -137,7 +148,7 @@ function startMentoring() {
         if ($(window).width() > 640) {
             $('.faces').addClass('launched');
             if (!$('.face').hasClass('has-bubble-open')) {
-                setTimeout(function() {
+                setTimeout(function () {
                     $('.face:nth-child(3)').addClass('has-bubble-open');
                 }, 400);
             }
@@ -168,7 +179,7 @@ function mentoringWideStart() {
 
 
 
-$(window).resize(function() {
+$(window).resize(function () {
     if ($(window).width() > 640) {
         mentoringWideStart();
     } else {

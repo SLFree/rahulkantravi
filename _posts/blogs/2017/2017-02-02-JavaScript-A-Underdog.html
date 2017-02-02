@@ -1,0 +1,155 @@
+--- 
+layout: blog 
+type: blog 
+title: JavaScript A Underdog
+body-name: JavaScript-Underdog 
+category: blog 
+---
+
+<h2>
+    JavaScript A Underdog
+</h2>
+
+<article>
+    <p>
+       From last few decades, 
+we saw some great programming languages C++ and JAVA being primary and most influential  among others, 
+we also have some really good and light weight programming languages server side development too (primarily php).
+But when it comes to client side scripting nothing is better than JavaScript.
+</p><p>
+And  probably  this is the biggest problem with JavaScript, that most of the people think it is just a small client side scripting language,
+and does not have what it takes to consider it a legitimate language that can handle heavy programming, but that is wrong and let's see why.
+
+
+    </p>
+</article>
+<article>
+    <p>
+        <h4>History
+        </h4>
+		Javascript was developed in May 1995 by Brendan Each in just ten days. The original name was Mocha.
+In September of 1995 the name was changed to LiveScript, then in December of the same year, on receiving a 
+trademark license from Sun, the name JavaScript was adapted.
+<br><br>
+For JavaScript to be used by every vender it needed standards to maintain. 
+In 1996 - 1997 JavaScript was taken to ECMA (European Computer Manufacturers Association) to carve out a standard specification, 
+which other browser vendors could then implement based on the work done at Netscape. ECMAScript is the name of the official standard,
+with JavaScript being the most well known of the implementations. ActionScript 3 is another well-known implementation of ECMAScript, with extensions.
+Although ECMA released ES6, a lot of browsers still working on ES5.
+<br><a target="_blank" href="https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript">Read More</a>
+    </p>
+</article>
+<article>
+    <p>
+        <h4>Javascript Now
+        </h4>
+		Time has changed very quickly for JavaScript. If someone had to define JavaScript 5-7 years ago I sure the definition would look something like this
+"Javascript is a client side loosely typed scripting language, that is mostly used for validation or event generation".
+But now according to Mozilla, it is, "JavaScript (JS for short) is a full-fledged dynamic programming language that, when applied to a HTML document,
+can provide dynamic interactivity on websites. It was invented by Brendan Each, co-founder of the Mozilla project, the Mozilla Foundation, and the Mozilla 
+Corporation."
+<br><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics">Read More</a>
+	</p>
+</article>
+
+<article>
+    <p>
+        <h4> Programming
+        </h4>
+		
+Learning JavaScript is much easier than it looks, if you have some understanding of programming, even a little bit is enough. The best thing about JavaScript
+is it provide complete freedom to the developers. It is not strictly typed language, so we can create a variable and simply initialize with any type and later
+we can store some other type of variable too.
+<br>
+And not only that, we can choose process oriented programming (like c programming), Object oriented programming, or functional programming.
+	
+	</p>
+	
+	
+</article>
+
+<article>
+    <p>
+        <h4> Object Orientation
+        </h4>
+		Object Oriented Programming (OOP) refers to using self-contained pieces of code to develop applications.We use objects as building blocks for our applications.
+Building applications with objects allows us to adapt some valuable techniques, namely Inheritance,Polymorphism , and Encapsulation.
+since only Inheritance and Encapsulation concepts apply to OOP in JavaScript, particularly because, in JavaScript, objects can encapsulate functionalities 
+and inherit methods. 
+<br><br>
+<b>Encapsulation</b> refers to enclosing all the functionalities of an object within that object so that the objects internal workings (its methods and properties)
+are hidden from the rest of the application. This allows us to abstract or localize specific set of functionalities on objects. It is archived using function 
+constructor in JavaScript.
+<pre><code>
+function Employee (firstName, lastName, startDate, signedNDA) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.startDate = startDate;
+	this.signedNDA = signedNDA;
+	this.fullName = function () {
+		console.log (this.firstName + " " + this.lastName); 
+	};
+
+}
+var abhijit = new Employee ("Rahul", "Kant", new Date(), true);
+</code></pre><br>
+We can do the same thing using class and constructor.
+<br><br>
+<b>Inheritance</b> refers to an object being able to inherit methods and properties from a parent object (a Class in other OOP languages, or a Function in JavaScript).
+This is archived by prototype concept in JavaScript.
+
+<pre><code>
+function Employee () {}
+
+Employee.prototype.firstName = "Abhijit";
+Employee.prototype.lastName = "Patel";
+Employee.prototype.startDate = new Date();
+Employee.prototype.signedNDA = false;
+
+Employee.prototype.fullName = function () {
+	console.log (this.firstName + " " + this.lastName); 
+};
+
+var abhijit = new Employee ();
+</code></pre>
+
+<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS">Read More</a>
+
+
+
+</p>
+</article>
+<article>
+    <p>
+        <h4> Functional Programming
+        </h4>
+		According to an article from Eric Elliott "Functional programming (often abbreviated FP) is the process of building software by composing pure functions, avoiding 
+shared state, mutable data, and side-effects. Functional programming is declarative rather than imperative, and application state flows through pure functions. 
+Contrast with object oriented programming, where application state is usually shared and collocated with methods in objects.". It is easy and really interesting, I
+will really recommend to read it.
+<br><a target="_blank" href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0#.x85nyyv1c">Read More</a>
+
+</p>
+</article>
+<article>
+    <p>
+        <h4> Other Technologies
+        </h4>
+		Now a days you can do a lot more than just frontend scripting on JavaScript. JavaScript is the main reason that we have noSQL databases like mongoDB and couchDB.
+We have a technology called Nodejs which is mainly concentrated to serve web requests, it is lighter and faster than most other application server technologies.
+Then there some geochronology that let you to create desktop application using JavaScript (appjs, tangiblejs, electron are most popular).   
+
+</p>
+</article>
+<article>
+    <p>
+        <h4> Conclusion
+        </h4>
+		JavaScript has allot of frameworks and libraries probably more than any other language (if you want, we can create our own libraries in JavaScript). jQuery and AngularJs are arguably most poplar amongst other. And now that Google
+and Microsoft came together for typescript with angular2, and Microsoft pioneering the development of mean which is a combination of mongodb, express, angularjs and
+nodejs things look parity bright for JavaScript.
+</p>
+</article>
+
+
+

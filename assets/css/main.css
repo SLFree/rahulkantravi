@@ -1306,6 +1306,9 @@ section.donation {
             -ms-transform: scale(1.1);
                 transform: scale(1.1); }
 
+.outdented {
+  color: #fff; }
+
 section.notes {
   padding: 20px 0 !important;
   background-image: url(../img/notes-bg.jpg);

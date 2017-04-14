@@ -1,0 +1,125 @@
+--- 
+layout: blog 
+type: blog 
+title: Understanding JavaScript Object Creation
+body-name: JavaScript-Objects 
+keywords: Javascript, JavaScript Object, JavaScript Object Creation, future JavaScript 
+category: blog 
+---
+
+<h2>
+    Understanding JavaScript Object Creation
+</h2>
+
+<article>
+    <p>
+Recently, I was talking to one of my friends about javascript, how well it is designed as a object-oriented-programming language and how beautifully it has taken over XML in form of JSONs. This took as to the topic of how many ways to create a javascript object and why there are so many ways to create.
+I searched on a lot of web sites to see if I can get an answer that why we have so many ways to create javascript object but there wasn’t a single website or blog addressing this topic, So I came up with my own.
+</p>
+</article>
+
+<h3>Ways to create javascript Objects</h3> 
+<article>
+    <p>
+There are a lot of ways to create objects in javascript, I’ll be only talking about significant ones.</p>
+<p><b>1. Using Object Literal :- </b>The best way to create a new object in javascript is by initializing it with object literals. This is the best way  because as soon as interpreter see’s  the curly bracket it gets to know that it has to create an object where as in other was the interpreter has to go on lexing at least 6 more symbols.     
+<br>var a={};
+</p>
+<p>
+<b>2. Using Constructor Functions :- </b>This is a great way to create similar objects again and again.
+<pre>
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+</pre>
+
+<b>Note:</b> Although there is no restrictions on how you write a constructor function but it is always preferred to have first letter of the constructor function to be in caps and other in camel cashing.
+</P>
+<p>
+<b>3. Using Classes :-</b> In all most all Object Oriented Programming languages we use classes to create object or to implement inheritance. As per ES5 there was no concept of classes but in ES6 javascript not only got classes but it also got concepts like “static” and “extend” same like java. The main reason that why we do this because it provides an easier understanding while inheritance, and we can create static members only through this way.
+<pre>
+class Cat { 
+  constructor(name) {
+    this.name = name;
+  }
+  
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Lion extends Cat {
+  speak() {
+    super.speak();
+    console.log(this.name + ' roars.');
+  }
+}
+</pre>
+<b>Note:</b> While using this we have to take care of only to things.
+<br><b>a.</b> If we are declaring/defining a constructor in child class we have to call the constructor of super class.
+<pre>
+class A {
+	constructor(){
+	}
+}
+class B extends A{
+	constructor(){
+	super();
+	}
+} //even if there are no implementation in super class constructor.
+</pre>
+<b>b.</b> The “extends” keyword works only with classes or constructor functions and not with objects.
+</p>
+<p><b>4. Using Object.create() :- </b>Create method in Object help in creating a new object with pass object as prototype of new object. This is really helpful as it provide inheritance on object level and in this way we don’t need any constructor for in heritance.
+<pre>
+// Animal properties and method encapsulation
+var Animal = {
+  type: 'Invertebrates', // Default value of properties
+  displayType: function() {  // Method which will display type of Animal
+    console.log(this.type);
+  }
+};
+
+// Create new animal type called animal1 
+var animal1 = Object.create(Animal);
+animal1.displayType(); // Output:Invertebrates
+
+// Create new animal type called Fishes
+var fish = Object.create(Animal);
+fish.type = 'Fishes';
+fish.displayType(); // Output:Fishes
+</pre>
+</p>
+<p><b>5. Using new Object() :- </b>This is the last way I want talk about. new with a constructor of Object works exactly similar to how tow curly brackets ({}) works. But when you pass something in the constructor it behaves very differently. It actually creates the wrapper class for the type of parameter.
+<pre>
+var firstName = new Object("John");
+//same as var firstName2 = new Object("John");
+
+var num = new Object (10);
+// same as var = new Number(10);
+</pre>
+This way does not look very useful but0 imagine a situation when you don’t know what kind of response might come and based on the type of response you have to do something. You can always write a set of if conditions for checking, one for number, one for string, one for Boolean and so on, or you can use new Object(val), the choice is yours.       
+</p>
+</article>
+<h3>How Javascript objects are destroyed
+</h3>
+<article>
+    <p>
+ JavaScript objects and variables are destroyed when they become inaccessible, meaning when there is no possible reference to them in the current execution context. The JavaScript runtime has to continuously monitor for this kind of elements. So unless we use the delete keyword to remove something, then its destruction is sort of under the hood. Some browsers are bad at detecting references left in closure scope and that is why we often see objects being set to null at the end of functions to make sure that memory is freed.
+</p>
+</article>
+
+<h3>
+Conclusion
+</h3>
+<article>
+    <p>
+JavaScript is a pretty powerful Object Oriented Programming Language. And the the first step in understanding object oriented programming language is to understange it's object.
+Feel free to ask questions and share and use this post and please leave comments below.
+	</p>
+</article>

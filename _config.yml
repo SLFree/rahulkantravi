@@ -6,3 +6,5 @@ exclude: ["node_modules",
   "package.json",
   "preview.jpg",
   "README.md"]
+
+theme: jekyll-theme-merlot

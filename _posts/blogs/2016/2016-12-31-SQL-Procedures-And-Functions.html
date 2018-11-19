@@ -1,0 +1,182 @@
+--- 
+layout: blog 
+type: blog 
+title: SQL Procedures And Functions
+body-name: SQL-Procedures 
+keywords: SQL, SQL-Procedures, SQL-Functions
+category: blog 
+---
+
+<h2>
+    SQL Procedures And Functions
+</h2>
+
+<article>
+    <p>
+        Recently I came across a new part of SQL called procedures and function, by the name itself we can say that it is set of SQL statements set together to get proper output much like functions or procedures in other languages. But the important question is why they are better?
+    </p>
+</article>
+<article>
+    <p>
+        <h4>Advantages of SQL Procedures Or Functions
+        </h4>
+		There are a lot of advantages of SQL Procedures, I am listing just a few.
+		1. Procedures Or Functions are PRE-COMPILED EXICUTION of SQL statements that resides on SQL server, so the execution of the SQL statements is much faster.<br/>
+		2. Since the SQL statements and logic resides on server it REDUCES CLIENT/SERVER TRAFFIC.<br/>
+		3. It is a very good way of EFFICENT REUSE OF CODE AND PROGRAMMING ABSTRACTION as the no part of SQL statements will be on sever side, every thing is on database level.<br/>
+		4. ENHANCED SECURITY CONTROLS: We can actually write special security test for table which will be abstracted completely.
+    </p>
+</article>
+<article>
+    <p>
+        <h4>Diffrences between SQL Procedures and Functions
+        </h4>
+		There are six main diffrences between SQL Procedures and Functions.
+		1. Stored Functions must RETURN A VALUE while Procedures DONT HAVE TO.<br/>
+		2. Stored Functions CANNOT USE SQL Statements that RETURN RESULT SET.<br/>
+		3. Stored Functions CANNOT USE SQL Statements that PERFORM TRANSACTION COMMITS OR CALLBACKS (DML such as INSERT/UPDATE/DELETE statements are not allowed).<br/>
+		4. Stored Functions are CALLED WITH 'SELECT' while stored Procedures are CALLED WITH 'CALL'.<br/>
+		5. Stored Functions can be called from Procedure whereas Procedures CANNOT BE CALLED from Function.<br/>
+		6. EXCEPTION can be HANDALED by try-catch block in a Procedure whereas try-catch block cannot be used in a Function		
+	</p>
+</article>
+
+<article>
+    <p>
+        <h4> Procedures.
+        </h4>
+		
+To create procedure in mySQL, first change the delimiter, we can put any thing instead of $$.
+And it is equally important to convert it back. We do the so that there should not be any confuson for the SQL server about what goes in the procedure and where it ends.
+<pre><code>
+DELIMITER $$
+CREATE PROCEDURE name_of_procedure()
+BEGIN
+/*
+SQL statements;
+*/
+END $$
+DELIMITER ;
+</code></pre>
+<br/>
+<b>And to call a procedure</b>
+<pre><code>
+CALL name_of_procedure(); 
+</code></pre>
+<br/>
+<b>Parameter To Procedure</b><br>
+There are three type of procedure that we can set for procedures.<br>
+1. IN<br>
+2. OUT<br>
+3. INOUT<br>
+To take the input  we have to use "In" keyword with parameter name and type to send out an output we need to declare "Out" keyword with parameter name and type in the list of parameter and then assign the value using 'into' keyword with parameter name. When we are returning the variable we are actually getting the  first value if two or more rows are satisfying the where clause.
+<pre><code>
+DELIMITER $$
+CREATE PROCEDURE name_of_procedure( IN in_name SMALLINT, OUT out_name VARCHAR(45))
+BEGIN
+/*
+SQL statements;
+*/
+SELECT col_name INTO out_name FROM table_name WHERE col_id=in_name;
+
+END $$
+DELIMITER ;
+
+</code></pre>
+<br>
+<b>
+ To Call </b>
+<pre><code>
+CALL name_of_procedure(3, @var_name); 
+</code></pre>
+<br>
+<b> To Show </b>
+<pre><code>
+SELECT @var_name;
+</code></pre>
+<br>
+Here the value of @var_new will be same as the output set in the procedure.
+
+<br><br>
+ 
+<b>
+INOUT
+</b>
+<br>
+ In this case a single variable will work as in put as well as out put parameter.
+<pre><code>	
+DELIMITER $$
+
+CREATE PROCEDURE inOut_procedure(INOUT pas INT)
+BEGIN
+/*
+SQL statements;
+*/
+SELECT Phoneno INTO pas FROM table_name
+WHERE password=pas;
+END
+
+DELIMITER ;
+</code></pre>
+<br>
+<b> To Call </b>
+<pre><code>
+SET @var_name=3;
+CALL inOut_procedure(@var_name); 
+</code></pre>
+<br>
+<b>To Show </b>
+<pre><code>
+SELECT @var_name;
+</code></pre>	
+	<br>
+	<b>To Show all the procedure which has simillar name</b>
+	<br><pre><code>
+SHOW  PROCEDURE STATUS LIKE '%name_of_procedure%';
+	</code></pre>	<br>
+	<b>To Show all the procedure in database</b>
+<br><pre><code>
+SHOW  PROCEDURE STATUS;
+</code></pre>	
+
+
+	
+	
+	</p>
+	
+	
+</article>
+
+<article>
+    <p>
+        <h4> Functions
+        </h4>
+		Functions are very simillar to the procedure but in function we can't send out parameter and the return statement should be written explicitly (parameters are optional).
+		<pre><code>
+DELIMITER $$
+CREATE Function name_of_function(input_param_name INT) RETURN INT
+BEGIN
+/*
+SQL statements;
+*/
+RETURN some_int_value
+END $$
+DELIMITER ;
+</code></pre>
+<br/>
+<b>To call </b>
+<pre><code>
+SELECT name_of_function(@some_value);
+</code></pre>	
+</p>
+</article>
+<article>
+    <p>
+        <h4> Conclusion
+        </h4>
+		The SQL Procedures and Functions are a great way to improve the peformance of the application and provide additional level of security, And are not too difficult to get a hang of it.
+		<br/>
+		Feel free to ask questions and share and use this post and please leave comments below.
+
+</p>
+</article>

@@ -1,10 +1,10 @@
 mixin design-img(link, img, color)
   a(href="#{link}" data-color="#{color}").design-img-link
-    img(src="assets/img/design-img/#{img}")
+    img(src="./assets/img/design-img/#{img}")
 
 section.design#design
   .flex.flex--center
-    .col-100.flex.flex--center.dribbble(data-orig-color="#ea4c89")
+    .col-100.flex.flex--center.dribbble(data-orig-color="rgba(101, 208, 61, 0.69)")
       .col-90
         p.home-lead What I Know...
         +design-img('#', 'java.jpg', 'orange')
@@ -12,9 +12,9 @@ section.design#design
         +design-img('#', 'CSS.png', '#38decc')
         +design-img('#', 'javascript.png', '#d21d16')
         +design-img('#', 'jquery.png', '#890cee')
-        +design-img('#', 'nodejs.png', '#d6d599')
-        +design-img('#', 'bluemix.png', '#d6d599')
-        +design-img('#', 'worklight.png', '#d6d599')
+        +design-img('#', 'nodejs.png', '#d60599')
+        +design-img('#', 'bluemix.png', '#06d599')
+        +design-img('#', 'worklight.png', '#d6d599') 
         .cf
-        a(href="#").home-cta See Blogs
+        a(href="/blogs").home-cta Click For Interesting Topics
     

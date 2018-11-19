@@ -1,7 +1,10 @@
 name: Rahul Kant
 markdown: redcarpet
+baseurl: rahulkantravi.tk
 exclude: ["node_modules",
   "gulpfile.js",
   "package.json",
   "preview.jpg",
   "README.md"]
+
+theme: jekyll-theme-merlot

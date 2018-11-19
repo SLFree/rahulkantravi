@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="type" content='blog'>
+  <meta name="description" content='{{ page.title }}'>
+  <meta name="date" content="{{page.date | date: '%b %d, %Y'}}" >
+  <meta name="keywords" content="{{ page.keywords }}" >
+  <meta name="author" content="Rahul Kant Ravi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% if page.title %} {{ page.title }} @ {% endif %} rk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{baseurl}}/assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{baseurl}}/assets/img/favicon.ico">
+    <link rel="manifest" href="{{baseurl}}/manifest.json">
+    <link rel="stylesheet" href="{{baseurl}}/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"> {% if page.type =="post" %}{{ page.styles }}{% endif %}
+    <script src="{{baseurl}}/assets/js/jquery.js"></script>
+    <style>
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printDiv,
+            #printDiv * {
+                visibility: visible;
+            }
+            #printDiv {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="blog">
+        <div id="printDiv">
+            {{ content }}
+        </div>
+        <button id='printBtn'>Print</button>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                printing();
+                var d = document,
+                    s = d.createElement('script');
+                s.src = '//rahulkantravi-tk.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+
+            function printing() {
+                console.log('in print');
+                $('#printBtn').click(function() {
+                    window.print();
+
+                    return true;
+                });
+            }
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </div>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90841598-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

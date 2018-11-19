@@ -1,4 +1,9 @@
 section.about
+  @media (max-width: 640px)
+    background:
+      image: url(../img/about-sm.jpg)
+      size: cover
+      position: center left
   background:
     image: url(../img/about-face-2.jpg)
     size: cover
@@ -16,9 +21,10 @@ section.about
     line-height: 1
 
     @media (max-width: 640px)
-      margin-left: auto
+      margin-left: 0px
       margin-right: auto
       max-width: 300px
+      color: #fff
 
 
   .lead
@@ -28,3 +34,6 @@ section.about
       margin-left: auto
       margin-right: auto
       max-width: 300px
+.smallhead
+  @media (max-width: 640px)
+    color: #fff

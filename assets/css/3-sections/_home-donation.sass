@@ -1,0 +1,55 @@
+section.donation
+
+  background:
+    image: url(../img/cry.jpg)
+    repeat: no-repeat
+    size: cover
+    attachment: fixed
+    
+
+  .home-sections &
+    padding: 0
+
+    @media (max-width: 640px)
+      padding-bottom: 0px
+
+  .col-1
+    display: flex
+    align-items: center
+
+    @media (max-width: 640px)
+      display: block
+      padding-top: 60px
+      margin-bottom: -140px
+
+  .home-cta
+    color: white
+    background: #3d96cb
+  
+
+
+  .article-wrap
+    //margin: -50px 0
+    +clearfix
+    .message
+      margin: 45px 10px 45px 60px
+      border: 1px solid
+      padding: 15px
+      font-size: large
+      font-family: cursive
+      background: rgba(1,1,1,0.5)
+      color: #fff
+      border-radius: 8px
+      +clearfix
+      @media (max-width: 700px)
+        margin: 0px
+        padding: 20px
+
+      img
+        float: right
+        &:hover
+          transform: scale(1.1)
+
+#donation
+  .outdented
+    color: #fff

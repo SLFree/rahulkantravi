@@ -3,8 +3,8 @@ section.articles#articles
 
     .col-50
       .article-wrap
-        {% for post in site.posts limit: 12 %}
-        a(href="#" style="background-image: url({{post.cover}})").article-thumb
+        {% for post in site.categories.project limit: 9 %}
+        a(href="#" style="background-image: url(.{{post.cover}})").article-thumb
           .article-meta
             .name {{post.title}}
             .date {{post.date | date: "%b %d, %Y"}}
@@ -16,4 +16,4 @@ section.articles#articles
       .col-1
         .desc-wrap
           p.home-lead.outdented ...What I Did So Far...
-          a(href="#").home-cta See My Work
+          a(href="/projects").home-cta See My Work
